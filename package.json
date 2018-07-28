@@ -1,0 +1,15 @@
+{
+  "name": "portek-portfolio",
+  "version": "1.0.0",
+  "description": "my portfolio responsive page",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
+  },
+  "repository": "https://github.com/Sylwuchaa/portek-portfolio.git",
+  "author": "Sylwester Srokosz",
+  "license": "MIT",
+  "dependencies": {
+    "node-sass": "^4.9.2"
+  }
+}
