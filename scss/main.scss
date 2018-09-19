@@ -20,7 +20,11 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.5;
 }
-
+ .clearfix::before {
+     content: '';
+     clear: both;
+     display: block;
+ }
 // nagłowki
 h1,
 h2,
@@ -28,11 +32,11 @@ h3 {
     margin: 0;
     font-weight: 400;
     &.lg-heading {
-        font-size: 5rem;
+        font-size: 8rem;
     }
     &.sm-heading {
-        font-size: 2rem;
-        padding: 0.2rem 1rem;
+        font-size: 4rem;
+        padding: 0.3rem -1rem;
         // background: rgba(lighten($primary-color, 2), 0.5);
     }
 }
@@ -71,4 +75,99 @@ main {
             margin-top: 20vh;
         }
     }
+}
+
+about-info {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-areas:
+      'bioimage bio bio'
+      'tech1 tech2 tech3';
+    grid-template-columns: repeat(3, 1fr);
+
+    .bio-image {
+      grid-area: bioimage;
+      margin: auto;
+      border-radius: 50%;
+      border: $secondary-color 3px solid;
+    }
+
+    .bio {
+      grid-area: bio;
+      font-size: 1.5rem;
+    }
+
+    .tech-1 {
+      grid-area: job1;
+    }
+
+    .tech-2 {
+      grid-area: job2;
+    }
+
+    .tech-3 {
+      grid-area: job3;
+    }
+
+    .technology {
+      background: lighten($primary-color, 5);
+      padding: 0.5rem;
+      border-bottom: $secondary-color 5px solid;
+    }
+  }
+
+  .about-info img {
+    position: absolute;
+    top: 30%;
+    left: auto;
+    width: 270px;
+    height: 270px;
+    border-radius: 50%;
+    border: solid 3px #eece1a;;
+  }
+
+.bio h3 {
+    position: absolute;
+    text-align: center;
+    display: inline-block;
+    width: 10%;
+    top: 30%;
+    left: 25%;
+    font-size: 9rem;
+    font-weight: 700;
+    margin: 0 auto;
+    box-shadow: 0 0 3 black;
+
+
+}
+.bio p {
+    position: absolute;
+    display: inline-block;
+    border-bottom: 4px solid $secondary-color;
+    width: 60%;
+    top: 30%;
+    left: 38%;
+    font-size: 2.6rem;
+    letter-spacing: 4px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+
+}
+
+#main-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 1rem;
+    background-color: darken($primary-color, 10);
+    color: set-text-color($primary-color);
+
+}
+#about {
+    margin: 0 auto;
+    max-width: 1600px;
+
 }

@@ -170,6 +170,11 @@ body {
       z-index: -1;
       background: rgba(68, 68, 68, 0.8); }
 
+.clearfix::before {
+  content: '';
+  clear: both;
+  display: block; }
+
 h1,
 h2,
 h3 {
@@ -178,12 +183,12 @@ h3 {
   h1.lg-heading,
   h2.lg-heading,
   h3.lg-heading {
-    font-size: 5rem; }
+    font-size: 8rem; }
   h1.sm-heading,
   h2.sm-heading,
   h3.sm-heading {
-    font-size: 2rem;
-    padding: 0.2rem 1rem; }
+    font-size: 4rem;
+    padding: 0.3rem -1rem; }
 
 a {
   color: #fff;
@@ -211,3 +216,75 @@ main {
     overflow: hidden; }
     main#home h1 {
       margin-top: 20vh; }
+
+about-info {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas: 'bioimage bio bio' 'tech1 tech2 tech3';
+  grid-template-columns: repeat(3, 1fr); }
+  about-info .bio-image {
+    grid-area: bioimage;
+    margin: auto;
+    border-radius: 50%;
+    border: #eece1a 3px solid; }
+  about-info .bio {
+    grid-area: bio;
+    font-size: 1.5rem; }
+  about-info .tech-1 {
+    grid-area: job1; }
+  about-info .tech-2 {
+    grid-area: job2; }
+  about-info .tech-3 {
+    grid-area: job3; }
+  about-info .technology {
+    background: #515151;
+    padding: 0.5rem;
+    border-bottom: #eece1a 5px solid; }
+
+.about-info img {
+  position: absolute;
+  top: 30%;
+  left: auto;
+  width: 270px;
+  height: 270px;
+  border-radius: 50%;
+  border: solid 3px #eece1a; }
+
+.bio h3 {
+  position: absolute;
+  text-align: center;
+  display: inline-block;
+  width: 10%;
+  top: 30%;
+  left: 25%;
+  font-size: 9rem;
+  font-weight: 700;
+  margin: 0 auto;
+  box-shadow: 0 0 3 black; }
+
+.bio p {
+  position: absolute;
+  display: inline-block;
+  border-bottom: 4px solid #eece1a;
+  width: 60%;
+  top: 30%;
+  left: 38%;
+  font-size: 2.6rem;
+  letter-spacing: 4px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-style: italic; }
+
+#main-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 1rem;
+  background-color: #2b2b2b;
+  color: #fff; }
+
+#about {
+  margin: 0 auto;
+  max-width: 1600px; }
