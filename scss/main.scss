@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 @import 'config';
 @import 'menu';
 @import 'mobile';
@@ -17,7 +18,7 @@ body {
     background: $primary-color;
     color: #fff;
     height: 100%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: $primary-font;
     line-height: 1.5;
 }
  .clearfix::before {
@@ -77,6 +78,8 @@ main {
     }
 }
 
+//About Me
+
 about-info {
     display: grid;
     grid-gap: 30px;
@@ -120,7 +123,7 @@ about-info {
     position: absolute;
     top: 30%;
     left: auto;
-    width: 270px;
+    width: 250px;
     height: 270px;
     border-radius: 50%;
     border: solid 3px #eece1a;;
@@ -149,25 +152,82 @@ about-info {
     left: 38%;
     font-size: 2.6rem;
     letter-spacing: 4px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: $secondary-font;
     font-style: italic;
 
 }
 
-#main-footer {
+
+
+#about {
+    margin: 0 auto;
+    max-width: 1600px;
+
+}
+
+// Work/Projects
+.projects {
+    display: grid;
+    grid-gap: .7rem;
+    grid-template-columns: repeat(3, 1fr);
+
+}
+
+img {
+    width: 100%;
+    border: 3px solid #fff;
+    &:hover {
+        opacity: .5;
+        border-color: $secondary-color;
+        @include easeOut;
+    }
+}
+
+//Button Styles
+.btn {
+    display: block;
+    padding: .5rem 1rem;
+    border: 0;
+    margin-bottom: .3rem;
+    &:hover {
+        background: $secondary-color;
+        color: set-text-color($secondary-color);
+    }
+}
+
+.btn-dark {
+    @extend .btn;
+    background: darken($primary-color, 50);
+    color: #fff;
+
+}
+
+.btn-light {
+    @extend .btn;
+    background: lighten($primary-color, 50);
+    color: #333;
+}
+#main-footer-about {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
+    line-height: 15px;
     text-align: center;
     font-size: 1.5rem;
     padding: 1rem;
     background-color: darken($primary-color, 10);
     color: set-text-color($primary-color);
-
 }
-#about {
-    margin: 0 auto;
-    max-width: 1600px;
 
+#main-footer {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    line-height: 15px;
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 1rem;
+    background-color: darken($primary-color, 10);
+    color: set-text-color($primary-color);
 }
