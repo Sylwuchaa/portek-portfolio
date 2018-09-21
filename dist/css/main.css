@@ -290,12 +290,14 @@ about-info {
 main#work {
   height: 100vh; }
 
-.item {
-  padding: 1.2rem; }
+.projects.item {
+  padding: 1.2rem;
+  border-radius: 25%; }
 
 img {
   width: 100%;
   border: 3px solid #fff;
+  border-radius: 1%;
   padding: .5rem; }
   img:hover {
     opacity: .5;
@@ -303,14 +305,26 @@ img {
     transition: all 0.5s ease-in-out; }
 
 .btn, .btn-dark, .btn-light {
-  width: 100%;
+  position: relative;
+  text-align: center;
+  font-size: 1.7rem;
+  line-height: 2rem;
+  margin: 0 auto;
+  width: 40%;
   display: block;
   padding: .5rem 1rem;
   border: 0;
-  margin-bottom: .8rem; }
-  .btn:hover, .btn-dark:hover, .btn-light:hover {
-    background: #eece1a;
-    color: #000; }
+  margin-bottom: .8rem;
+  border-radius: 5px; }
+  .btn::before, .btn-dark::before, .btn-light::before {
+    content: "";
+    top: 50%;
+    left: 0;
+    position: absolute;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 4px;
+    background-color: #eece1a; }
 
 .btn-dark {
   background: black;
