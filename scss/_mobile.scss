@@ -81,3 +81,9 @@
       grid-template-columns: 1fr;
     }
   }
+
+  @include mediaLg {
+    h1.lg-heading {
+      font-size: 2rem;
+    }
+  }

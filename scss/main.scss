@@ -21,20 +21,24 @@ body {
     font-family: $primary-font;
     line-height: 1.5;
 }
- .clearfix::before {
-     content: '';
-     clear: both;
-     display: block;
- }
+
+.clearfix::before {
+    content: '';
+    clear: both;
+    display: block;
+}
+
 // nagłowki
 h1,
 h2,
 h3 {
     margin: 0;
     font-weight: 400;
+
     &.lg-heading {
         font-size: 8rem;
     }
+
     &.sm-heading {
         font-size: 4rem;
         padding: 0.3rem -1rem;
@@ -60,18 +64,23 @@ header {
 main {
     padding: 4rem;
     height: 100%;
+
     .icons {
         margin-top: 1rem;
+
         a {
             padding: 0.4rem;
+
             &:hover {
                 color: $secondary-color;
                 @include easeOut();
             }
         }
     }
+
     &#home {
         overflow: hidden;
+
         h1 {
             margin-top: 20vh;
         }
@@ -84,50 +93,51 @@ about-info {
     display: grid;
     grid-gap: 30px;
     grid-template-areas:
-      'bioimage bio bio'
-      'tech1 tech2 tech3';
+        'bioimage bio bio'
+        'tech1 tech2 tech3';
     grid-template-columns: repeat(3, 1fr);
 
     .bio-image {
-      grid-area: bioimage;
-      margin: auto;
-      border-radius: 50%;
-      border: $secondary-color 3px solid;
+        grid-area: bioimage;
+        margin: auto;
+        border-radius: 50%;
+        border: $secondary-color 3px solid;
     }
 
     .bio {
-      grid-area: bio;
-      font-size: 1.5rem;
+        grid-area: bio;
+        font-size: 1.5rem;
     }
 
     .tech-1 {
-      grid-area: job1;
+        grid-area: job1;
     }
 
     .tech-2 {
-      grid-area: job2;
+        grid-area: job2;
     }
 
     .tech-3 {
-      grid-area: job3;
+        grid-area: job3;
     }
 
     .technology {
-      background: lighten($primary-color, 5);
-      padding: 0.5rem;
-      border-bottom: $secondary-color 5px solid;
+        background: lighten($primary-color, 5);
+        padding: 0.5rem;
+        border-bottom: $secondary-color 5px solid;
     }
-  }
+}
 
-  .about-info img {
+.about-info img {
     position: absolute;
     top: 30%;
     left: auto;
     width: 250px;
     height: 270px;
     border-radius: 50%;
-    border: solid 3px #eece1a;;
-  }
+    border: solid 3px #eece1a;
+    ;
+}
 
 .bio h3 {
     position: absolute;
@@ -143,6 +153,7 @@ about-info {
 
 
 }
+
 .bio p {
     position: absolute;
     display: inline-block;
@@ -173,6 +184,7 @@ about-info {
     margin: 5rem;
 
 }
+
 main#work {
     height: 100vh;
 }
@@ -187,6 +199,8 @@ img {
     border: 3px solid #fff;
     border-radius: 1%;
     padding: .5rem;
+    // filter: blur(.5px);
+
     &:hover {
         opacity: .5;
         border-color: $secondary-color;
@@ -200,13 +214,18 @@ img {
     text-align: center;
     font-size: 1.7rem;
     line-height: 2rem;
-    margin: 0 auto;
+    margin: .5rem auto;
     width: 40%;
     display: block;
     padding: .5rem 1rem;
-    border: 0;
+    border: 2px solid $secondary-color;
     margin-bottom: .8rem;
     border-radius: 5px;
+    overflow: hidden;
+
+
+    transition: .20s .20s;
+
     &::before {
         content: "";
         top: 50%;
@@ -214,10 +233,25 @@ img {
         position: absolute;
         transform: translateY(-50%);
         width: 100%;
-        height: 4px;
-        background-color: #eece1a;
+        height: 2px;
+        top: 50%;
+        left: 100%;
+        transition: left .4s, height .3s .4s;
+        z-index: -1;
+        background-color: $secondary-color;
+    }
 
-}
+    &:hover::before {
+        left: 0;
+        height: 102%;
+    }
+
+    &:hover {
+        // background: $secondary-color;
+        border: 2px solid black;
+        color: black;
+    }
+
     // &:hover {
     //     background: $secondary-color;
     //     color: set-text-color($secondary-color);
@@ -226,16 +260,19 @@ img {
 
 .btn-dark {
     @extend .btn;
-    background: darken($primary-color, 50);
+    background-color: transparent;
+    // background: darken($primary-color, 50);
     color: #fff;
 
 }
 
 .btn-light {
     @extend .btn;
-    background: lighten($primary-color, 50);
-    color: #333;
+    background-color: transparent;
+    // background: lighten($primary-color, 50);
+    color: #fff;
 }
+
 #main-footer-about {
     position: fixed;
     bottom: 0;
@@ -248,6 +285,7 @@ img {
     background-color: darken($primary-color, 10);
     color: set-text-color($primary-color);
 }
+
 footer#main-footer-work {
     position: fixed;
     bottom: 0px;
