@@ -80,10 +80,13 @@
     div.projects {
       grid-template-columns: 1fr;
     }
+    html {
+      font-size: 5px;
+    }
   }
 
   @include mediaLg {
-    h1.lg-heading {
-      font-size: 2rem;
+    html {
+      font-size: 5px;
     }
   }
