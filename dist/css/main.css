@@ -110,6 +110,14 @@
     main .lg-heading {
       line-height: 1;
       margin-bottom: 1rem; }
+    main .about-info-flex {
+      flex-direction: row;
+      flex-wrap: wrap; }
+      main .about-info-flex .bio p {
+        display: flex;
+        font-size: 1.6rem;
+        text-align: left;
+        letter-spacing: 1px; }
   ul.menu-nav,
   div.menu-branding {
     float: none;
@@ -138,9 +146,13 @@
     grid-template-columns: repeat(3, 1fr); } }
 
 @media screen and (max-width: 500px) {
-  main#home h1 {
+  main#home h1,
+  main#about h1 {
     margin-top: 10vh;
     font-size: 7rem; }
+  .about-info-flex {
+    flex-direction: column;
+    flex-wrap: wrap; }
   div.projects {
     grid-template-columns: 1fr; }
   html {
@@ -148,7 +160,10 @@
 
 @media screen and (min-width: 769px) and (max-width: 1170px) {
   html {
-    font-size: 5px; } }
+    font-size: 5px; }
+  .about-info-flex {
+    flex-direction: column;
+    flex-wrap: wrap; } }
 
 html {
   font-size: 10px; }
@@ -250,35 +265,29 @@ about-info {
     padding: 0.5rem;
     border-bottom: #eece1a 5px solid; }
 
-.about-info img {
-  position: absolute;
-  top: 30%;
-  left: auto;
-  width: 250px;
-  height: 270px;
+.about-info-flex {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: space-around; }
+
+.about-info-flex img {
+  margin: 5rem;
   border-radius: 50%;
   border: solid 3px #eece1a; }
 
 .bio h3 {
-  position: absolute;
-  text-align: center;
-  display: inline-block;
-  width: 10%;
-  top: 30%;
-  left: 25%;
+  width: 5%;
   font-size: 9rem;
   font-weight: 700;
-  margin: 0 auto;
   box-shadow: 0 0 3 black; }
 
 .bio p {
-  position: absolute;
-  display: inline-block;
-  padding-bottom: 1.8rem;
-  border-bottom: 2px solid #eece1a;
-  width: 60%;
-  top: 30%;
-  left: 38%;
+  width: 90%;
+  flex-grow: 1;
+  flex-basis: 90%;
   font-size: 2.6rem;
   letter-spacing: 4px;
   font-family: "Montserrat", sans-serif;
